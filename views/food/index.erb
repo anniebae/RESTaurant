@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
+<center>
+<ul>
+	<% @foods.each do |food| %>
+	<li>
+		<a href="/foods/<%= food.id %>"><%= food.name.upcase %></a> -------------------- <b>$<%= food.price %></b>
+	</li>
+	<% end %>
+</ul>
+</center>

@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
+
+<center>
+	<form action="/parties/<%= @party.id %>" method="post">
+		<input type="hidden" name="_method" value="patch" >
+		<p>
+			NAME:
+			<input name="party[name]" value="<%= @party.name %>">
+		</p>
+		<p>
+			# OF GUESTS:
+			<input name="party[size_of_party]" value="<%= @party.size_of_party %>">
+		</p>
+	
+		<input type="submit" value="CHANGE OF PLANS">
+	</form>
+</center>

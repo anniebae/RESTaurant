@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
+<center>
+<form action="/foods/<%= @food.id %>" method="post">
+	<input type="hidden" name="_method" value="patch">
+	<p>
+		FOOD:
+		<input name="food[name]" value="<%= @food.name %>">
+	</p>
+
+	<p>
+		PRICE:
+		<input name="food[price]" value="<%= @food.price %>">
+	</p>
+
+	<input type="submit" value="FIX THIS DISH">
+</form>
+</center>

@@ -1,0 +1,10 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
+<center>
+<ul>
+	<% @parties.each do |party| %>
+	<li>
+		<a href="/parties/<%= party.id %>"><%= party.name.upcase %></a> is a party of <b><%= party.size_of_party %></b>
+	</li>
+	<% end %>
+</ul>
+</center>
