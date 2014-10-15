@@ -1,16 +1,22 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
+<!-- <h2><%= @party.name %></h2> -->
 
-<h2><%= @party.name %></h2>
 
-<table>
-	<% @party.orders.each do |order| %>
+
+<table border="5" width="50%" CELLSPACING="3">
 	<tr>
-		<th>Food</th>
-		<th>$</th>
+		<th colspan="2">
+			<h3><%= @party.name %></h3>
+		</th>
 	</tr>
-
 	<tr>
-		<td><%= order.food.name %></td>
-		<td><%= order.food.price %></td>
+	<th>Food</th>
+	<th>$</th>
 	</tr>
+	<% @party.foods.each do |food| %>
+	<tr align="center">
+		<td><%= food.name %></td>
+		<td><%= food.price %></td>
+	</tr>
+	<% end %>
 </table>
