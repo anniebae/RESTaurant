@@ -1,4 +1,5 @@
 require 'bundler'
+require 'pry'
 Bundler.require
 
 ActiveRecord::Base.establish_connection ({
@@ -42,6 +43,7 @@ end
 
 get '/foods/:id' do
 	@food = Food.find(params[:id])
+	@food_shows_parties = @food.parties
 	erb :'food/show'
 end
 
@@ -79,7 +81,15 @@ end
 
 get '/parties/:id' do
 	@party = Party.find(params[:id])
+	# @party_shows_foods = @party.foods
+	@foods = Food.all
+	# get all foods so i can create drop 
+	# down menu to add foods to a party 
+
 	erb :'party/show'
+
+
+
 end
 
 delete '/parties/:id' do
@@ -90,13 +100,19 @@ end
 #-----------------------------------------
 
 # Creates a new order
-post '/order' do
-
-	@food = Food.find(params[:id])
-	# food = Food.find(params[:id])
-	@party = Party.find(params[:id])
+post '/parties/:id/orders' do
+	food = Food.where(name: params[:food_name])
+	party = Party.find(params[:id])
 	party.foods << food
-	redirect '/parties'
+
+	# Order.create({
+	# 	food_id: food.first.id,
+	# 	party_id: party.id
+	# })
+
+	redirect "/parties/#{party.id}"
+
+
   # get food by id 
   # food = Food.find(params[:id])
   # get party by id 
@@ -104,3 +120,17 @@ post '/order' do
   # party.foods << food
 end
 
+
+
+# step 1
+# in the show page for a party, you need all
+# of the food items, maybe store in instance 
+# instance variable? 
+
+# step 2
+# show all foods in a form on the party show page
+
+# step 3
+# when form is submitted, what parameters does it need?
+# at the very least, i can think of the 
+# food_id and party_id

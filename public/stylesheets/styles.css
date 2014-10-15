@@ -23,3 +23,15 @@ a {
 	text-decoration: none;
 	color: rgb(206, 197, 180);
 }
+
+
+a:hover {
+	color: rgb(138, 125, 115);
+}
+
+div.myButton input {
+    cursor:pointer;
+    width: 145px;
+    height: 45px;
+    border: none;
+}

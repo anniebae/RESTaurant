@@ -3,10 +3,50 @@
 <h3><%= @party.name %></h3>
 <h4><%= @party.size_of_party %> attendants</h4>
 
+<br>
+<br>
+<br>
+
+<ul>
+	<% @party.foods.each do |food| %>
+	<li>
+		<%= food.name %>
+	</li>
+	<% end %>
+</ul>
+
+<br>
+
+<ul>
+	<% @foods.each do |food| %>
+		|| <%= food.name %> || 
+	<% end %>
+</ul>
+
+
+<form action="/parties/<%= @party.id %>/orders" method="post">
+	<p>
+		SELECT A FOOD:
+		<input name="food_name" placeholder="F O O D">
+	</p>
+	<div class="myButton">
+	<input type="submit" value="ADD TO ORDER">
+	</div>
+</form>
+
+<br>
+<br>
+<br>
 <a href="/parties/<%= @party.id %>/edit">CHANGE OF PLANS</a>
 
+<br>
+<br>
 <form action="/parties/<%= @party.id %>" method="post">
 	<input type="hidden" name="_method" value="delete" />
+	<div class="myButton">
 	<input type="submit" value="CANCEL RESERVATION">
+	</div>
 </form>
 </center>
+<br>
+<br>
