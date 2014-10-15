@@ -128,6 +128,10 @@ end
 # food_id and party_id
 
 
+# *** NOT RIGHT ***
 patch '/orders/:id' do
-	orders = Order.find
+	orders = Order.find(params[:id])
+	orders.update(params[:orders])
+	redirect '/orders'
 end
+# *** NOT RIGHT ***
