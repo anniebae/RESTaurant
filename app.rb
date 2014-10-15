@@ -109,10 +109,6 @@ post '/parties/:id/orders' do
 	# 	party_id: party.id
 	# })
 	redirect "/parties/#{party.id}"
-  # get food by id 
-  # food = Food.find(params[:id])
-  # get party by id 
-  # party.foods << food
 end
 
 
@@ -128,10 +124,21 @@ end
 # food_id and party_id
 
 
-# *** NOT RIGHT ***
-patch '/orders/:id' do
-	orders = Order.find(params[:id])
-	orders.update(params[:orders])
-	redirect '/orders'
+delete '/parties/:party_id/orders' do
+	party_id = params[:party_id]
+	Order.delete(params[:order_id])
+	redirect "/parties/#{party_id}"
 end
-# *** NOT RIGHT ***
+
+
+# Saves the party's receipt data to a file. Displays the content of the receipt. Offer the file for download.
+get '/parties/:id/receipt' do
+	@party = Party.find(params[:id])
+	@food = Food.find(params[:id])
+	@party.foods 
+	erb :'party/receipt'
+end
+
+# Marks the party as paid
+patch '/parties/:id/checkout' do
+end

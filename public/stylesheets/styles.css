@@ -29,6 +29,13 @@ a:hover {
 	color: rgb(138, 125, 115);
 }
 
+div.myButton3 input {
+    cursor:pointer;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
 div.myButton2 input {
     cursor:pointer;
     width: 135px;

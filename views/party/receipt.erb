@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
+
+<h2><%= @party.name %></h2>
+
+<table>
+	<% @party.orders.each do |order| %>
+	<tr>
+		<th>Food</th>
+		<th>$</th>
+	</tr>
+
+	<tr>
+		<td><%= order.food.name %></td>
+		<td><%= order.food.price %></td>
+	</tr>
+</table>

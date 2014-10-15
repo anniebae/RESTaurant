@@ -9,10 +9,17 @@
 
 <p>--  C O M I N G   U P  --</p>
 <ul>
-	<% @party.foods.each do |food| %>
+	<% @party.orders.each do |order| %>
 	<li>
 		<br>
-		<%= food.name %>
+		<%= order.food.name %>
+		<form action="/parties/<%=@party.id%>/orders" method="post">
+			<input type="hidden" name="order_id" value="<%= order.id %>">
+		<input type="hidden" name="_method" value="delete">
+		<div class="myButton3">
+		<input type="submit" value="X">
+		</div>
+		</form>
 	</li>
 	<% end %>
 </ul>
@@ -21,8 +28,8 @@
 
 <ul>
 	<% @foods.each do |food| %>
-		|| <%= food.name %> || 
-	<% end %>
+		|| <%= food.name %> ||
+ 	<% end %>
 </ul>
 
 
@@ -31,6 +38,9 @@
 		SELECT A FOOD:
 		<input name="food_name" placeholder="F O O D">
 	</p>
+	<a href="/parties/<%= @party.id %>/orders">EDIT YOUR ORDER</a>
+	<br>
+	<br>
 	<div class="myButton2">
 	<input type="submit" value="ADD TO ORDER">
 	</div>
@@ -39,7 +49,7 @@
 <br>
 <br>
 <br>
-<a href="/parties/<%= @party.id %>/edit">CHANGE OF PLANS</a>
+<a href="/parties/<%= @party.id %>/edit">CHANGE RESERVATION</a>
 
 <br>
 <br>
