@@ -104,33 +104,30 @@ post '/parties/:id/orders' do
 	food = Food.where(name: params[:food_name])
 	party = Party.find(params[:id])
 	party.foods << food
-
 	# Order.create({
 	# 	food_id: food.first.id,
 	# 	party_id: party.id
 	# })
-
 	redirect "/parties/#{party.id}"
-
-
   # get food by id 
   # food = Food.find(params[:id])
   # get party by id 
-
   # party.foods << food
 end
-
 
 
 # step 1
 # in the show page for a party, you need all
 # of the food items, maybe store in instance 
 # instance variable? 
-
 # step 2
 # show all foods in a form on the party show page
-
 # step 3
 # when form is submitted, what parameters does it need?
 # at the very least, i can think of the 
 # food_id and party_id
+
+
+patch '/orders/:id' do
+	orders = Order.find
+end
