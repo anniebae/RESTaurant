@@ -1,4 +1,5 @@
 h1 {
+	color: white;
 	font-family: Century;
 	font-size: 8em;
 }
@@ -8,8 +9,8 @@ h2 {
 }
 
 h6 {
-	font-size: 2em;
-	color: rgb(192, 192, 192);
+	font-size: 3em;
+	color: rgb(220, 220, 220);
 }
 
 body {
@@ -53,4 +54,8 @@ div.myButton input {
     width: 145px;
     height: 45px;
     border: none;
+}
+
+span {
+	color: lightblue;
 }

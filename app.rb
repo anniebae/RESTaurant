@@ -136,6 +136,7 @@ delete '/parties/:party_id/orders' do
 end
 
 
+
 # Saves the party's receipt data to a file. Displays the content of the receipt. Offer the file for download.
 get '/parties/:id/receipt' do
 	@party = Party.find(params[:id])

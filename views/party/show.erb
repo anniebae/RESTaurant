@@ -28,11 +28,14 @@
 		</td>
 	</tr>
 </table>
+<br>
+<br>
+	<a href="/parties/<%= @party.id %>/receipt">R E C E I P T</a>
 
 
 
 <br>
-
+<br>
 <ul>
 	<% @foods.each do |food| %>
 		|| <%= food.name %> ||
@@ -50,7 +53,7 @@
 <br>
 <br>
 </form>
-	<a href="/parties/<%= @party.id %>/receipt">RECEIPT</a>
+
 <br>
 <br>
 <br>
