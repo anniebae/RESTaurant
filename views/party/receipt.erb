@@ -1,22 +1,44 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
-<!-- <h2><%= @party.name %></h2> -->
-
-
 
 <table border="5" width="50%" CELLSPACING="3">
 	<tr>
 		<th colspan="2">
-			<h3><%= @party.name %></h3>
+			<h2>R E S T a u r a n t</h2>
+			<p><i>r e c e i p t</i></p>
+			<p>Party: <%= @party.name %></p>
 		</th>
 	</tr>
 	<tr>
-	<th>Food</th>
+	<th>FOOD</th>
 	<th>$</th>
 	</tr>
+	<% total = 0 %>
 	<% @party.foods.each do |food| %>
 	<tr align="center">
 		<td><%= food.name %></td>
 		<td><%= food.price %></td>
+		<br>
 	</tr>
+	<% total += food.price %>
 	<% end %>
+	<tr>
+		<th>TOTAL</th>
+		<th>$<%= total.round(2)%></th>
+	</tr>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<th colspan="2">TIP SUGGESTIONS: </th>
+	</tr>
+	<tr>
+		<td colspan="2"><center>15% = $<%= (total * 0.15).round(2) %>
+		<br>20% = $<%= (total * 0.20).round(2) %>
+		<br>25% = $<%= (total * 0.25).round(2) %></center></td>
+	</tr>
 </table>
+
+<h4>Come back soon!</h4>
+
+<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>

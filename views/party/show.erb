@@ -1,28 +1,35 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
 <center>
-<h3><%= @party.name %></h3>
+<h3><%= @party.name.upcase %></h3>
 <h4><%= @party.size_of_party %> attendants</h4>
 
 <br>
 <br>
 <br>
 
-<p>--  C O M I N G   U P  --</p>
-<ul>
+<p>--  Y O U R  O R D E R S  --</p>
+
+<table>
+
 	<% @party.orders.each do |order| %>
-	<li>
-		<br>
-		<%= order.food.name %>
-		<form action="/parties/<%=@party.id%>/orders" method="post">
+	<tr>
+		<td>
+			<%= order.food.name %>
+		</td>
+		<td>
+			<form action="/parties/<%=@party.id%>/orders" method="post">
 			<input type="hidden" name="order_id" value="<%= order.id %>">
-		<input type="hidden" name="_method" value="delete">
-		<div class="myButton3">
-		<input type="submit" value="X">
-		</div>
-		</form>
-	</li>
-	<% end %>
-</ul>
+			<input type="hidden" name="_method" value="delete">
+			<div class="myButton3">
+				<input type="submit" value="X">
+			</div>
+			</form>
+		<% end %>
+		</td>
+	</tr>
+</table>
+
+
 
 <br>
 
@@ -32,20 +39,18 @@
  	<% end %>
 </ul>
 
-
 <form action="/parties/<%= @party.id %>/orders" method="post">
 	<p>
 		SELECT A FOOD:
 		<input name="food_name" placeholder="F O O D">
 	</p>
-	<a href="/parties/<%= @party.id %>/orders">EDIT YOUR ORDER</a>
-	<br>
-	<br>
 	<div class="myButton2">
 	<input type="submit" value="ADD TO ORDER">
 	</div>
+<br>
+<br>
 </form>
-
+	<a href="/parties/<%= @party.id %>/receipt">RECEIPT</a>
 <br>
 <br>
 <br>

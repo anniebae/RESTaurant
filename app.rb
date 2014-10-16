@@ -26,8 +26,13 @@ get '/foods/new' do
 end
 
 post '/foods' do
-	Food.create(params[:food])
-	redirect '/foods'
+	food = Food.create(params[:food])
+	if food.valid?
+		redirect '/foods'
+	else
+		@errors = food.errors.full_messages
+		erb :'food/new'
+	end
 end
 
 get '/foods/:id/edit' do
@@ -133,11 +138,6 @@ end
 
 # Saves the party's receipt data to a file. Displays the content of the receipt. Offer the file for download.
 get '/parties/:id/receipt' do
-
 	@party = Party.find(params[:id])
 	erb :'party/receipt'
-end
-
-# Marks the party as paid
-patch '/parties/:id/checkout' do
 end
