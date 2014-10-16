@@ -60,7 +60,7 @@ end
 #-----------------------------------------
 
 get '/parties' do
-	@parties = Party.all
+	@parties = Party.where({paid: false})
 	erb :'party/index'
 end
 
