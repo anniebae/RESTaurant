@@ -149,3 +149,10 @@ patch '/parties/:id/paybill' do
 	party.save
 	redirect '/foods'
 end
+
+patch '/orders/:id/dontlikethis' do
+	order = Order.find(params[:id])
+	order.charge = false
+	order.save
+	redirect "/parties/#{order.party_id}"
+end
