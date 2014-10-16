@@ -1,7 +1,8 @@
 h1 {
 	color: white;
-	font-family: Century;
-	font-size: 8em;
+	font-family: 'Prata', serif;
+	font-weight: 200;
+	font-size: 8.5em;
 }
 
 h2 {
@@ -15,8 +16,9 @@ h6 {
 
 body {
 	font-size: 16px;
-	font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-	background: black;
+	font-family: 'Cinzel', serif;
+	background: url('http://www.cuzzsoft.com/wallbank/91-black-metal-texture-wallpaper.jpg');
+	background-repeat: no-repeat;
 	color: white;
 }
 
@@ -33,6 +35,13 @@ a {
 
 a:hover {
 	color: rgb(138, 125, 115);
+}
+
+div.myButton4 input {
+    cursor:pointer;
+    width: 130px;
+    height: 20px;
+    border: none;
 }
 
 div.myButton3 input {
@@ -56,6 +65,10 @@ div.myButton input {
     border: none;
 }
 
-span {
-	color: lightblue;
+span a {
+	color: #CCF5FF;
+}
+
+span a:hover {
+	color: #8AABCC;
 }

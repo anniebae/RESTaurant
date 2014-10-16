@@ -1,11 +1,25 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
-<center>
-<ul>
-	<% @parties.each do |party| %>
-	<li>
-		<a href="/parties/<%= party.id %>"><%= party.name.upcase %></a> is a party of <b><%= party.size_of_party %></b>
-	</li>
-	<% end %>
-</ul>
-</center>
 
+<center>
+<table border="5" width="30%" CELLSPACING="3">
+	<tr>
+		<th colspan="2">
+			<h2>WAIT LIST</h2>
+		</th>
+	</tr>
+	<tr>
+		<th>Party Name: </th>
+		<th># of People</th>
+	</tr>
+	<% @parties.each do |party| %>
+	<tr align="center">
+		<td>
+			<a href="/parties/<%= party.id %>"><%= party.name.upcase %></a>
+		</td>
+		<td>
+			<%= party.size_of_party %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+</center>

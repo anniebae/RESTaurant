@@ -4,8 +4,8 @@
 <table border="5" width="50%" CELLSPACING="3">
 	<tr>
 		<th colspan="2">
-			<h2><a href="/foods"><span>M E N U</span></a></h2>
-			<a href="/foods/new"><i>Add to this menu</i></a>>
+			<h2><span><a href="/foods">M E N U</a></span></h2>
+			<span><a href="/foods/new"><i>Add to this menu</i></a></span>
 			<br>
 			<br>
 		</th>
@@ -14,7 +14,7 @@
 	<tr></tr>
 	<% @foods.each do |food| %>
 	<tr align="center">
-		<td><a href="/foods/<%= food.id %>"><%= food.name.upcase %></td>
+		<td><span><a href="/foods/<%= food.id %>"><%= food.name.upcase %></span></a></td>
 		<td>$<%= food.price %></td>
 	</tr>
 	<% end %>
