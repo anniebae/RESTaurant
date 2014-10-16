@@ -142,3 +142,10 @@ get '/parties/:id/receipt' do
 	@party = Party.find(params[:id])
 	erb :'party/receipt'
 end
+
+patch '/parties/:id/paybill' do
+	party = Party.find(params[:id])
+	party.paid = true
+	party.save
+	redirect '/foods'
+end
