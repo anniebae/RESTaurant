@@ -116,19 +116,6 @@ post '/parties/:id/orders' do
 	redirect "/parties/#{party.id}"
 end
 
-
-# step 1
-# in the show page for a party, you need all
-# of the food items, maybe store in instance 
-# instance variable? 
-# step 2
-# show all foods in a form on the party show page
-# step 3
-# when form is submitted, what parameters does it need?
-# at the very least, i can think of the 
-# food_id and party_id
-
-
 delete '/parties/:party_id/orders' do
 	party_id = params[:party_id]
 	Order.delete(params[:order_id])

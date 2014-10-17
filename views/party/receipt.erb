@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
 
-<table border="5" width="50%" CELLSPACING="3">
+<table border="5" width="30%" CELLSPACING="3">
 	<tr>
 		<th colspan="2">
 			<h2>R E S T a u r a n t</h2>
@@ -9,7 +9,7 @@
 		</th>
 	</tr>
 	<tr>
-		<th>FOOD</th>
+		<th>ORDERED ITEMS</th>
 		<th>$</th>
 	</tr>
 	<% total = 0 %>
@@ -42,24 +42,26 @@
 		<th colspan="2"><i>tip suggestions: </i></th>
 	</tr>
 	<tr>
-		<td colspan="2"><center><i>15% = $<%= (total * 0.15).round(2) %>
+		<td colspan="2">
+			<center><i>15% = $<%= (total * 0.15).round(2) %>
 			<br>20% = $<%= (total * 0.20).round(2) %>
-			<br>25% = $<%= (total * 0.25).round(2) %></i></center></td>
-		</tr>
-	</table>
+			<br>25% = $<%= (total * 0.25).round(2) %></i></center>
+		</td>
+	</tr>
+</table>
 
-	<br>
-	<br>
+<br>
+<br>
 
-	<form action="/parties/<%= @party.id %>/paybill" method="post">
-		<input type="hidden" name="_method" value="patch">
+<form action="/parties/<%= @party.id %>/paybill" method="post">
+	<input type="hidden" name="_method" value="patch">
 		<div class="myButton">
 			<input type="submit" onclick="return confirm('PAYMENT PROCESSED - Come back soon!')" value="P A Y">
 		</div>
-	</form>
+</form>
 
-	<br>
-	<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>
+<br>
+<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>
 
-	<br>
-	<br>
+<br>
+<br>

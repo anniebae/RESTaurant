@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
-<center>
-<h3><%= @party.name.upcase %></h3>
-<h4><%= @party.size_of_party %> attendants</h4>
+	<center>
+	<h3><%= @party.name.upcase %></h3>
+	<h4><%= @party.size_of_party %> attendants</h4>
 
 <br>
 <br>
@@ -10,7 +10,6 @@
 <p>--  Y O U R  O R D E R S  --</p>
 
 <table>
-
 	<% @party.orders.each do |order| %>
 	<tr>
 		<td>
@@ -26,17 +25,12 @@
 			</form>
 		</td>
 		<td>
-
-<!-- 		PROBLEM *** DOES NOT WORK * BELOW ACTS LIKE A DELETE BUTTON -->
-		<form action="/orders/<%= order.id %>/dontlikethis" method="post">
-	<input type="hidden" name="_method" value="patch">
-	<div class="myButton4">
-	<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
-</div>
-</form>
-
-
-
+			<form action="/orders/<%= order.id %>/dontlikethis" method="post">
+			<input type="hidden" name="_method" value="patch">
+			<div class="myButton4">
+			<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
+			</div>
+			</form>
 		</td>
 		<% end %>
 		</td>
@@ -51,17 +45,13 @@
 
 <br>
 <br>
+<form action="/parties/<%= @party.id %>/orders" method="post">
+	SELECT A FOOD ITEM:
 <ul>
 	<% @foods.each do |food| %>
-		|| <%= food.name %> ||
+		<input type="radio" name="food_name" value="<%= food.name %>"><%= food.name %>
  	<% end %>
 </ul>
-
-<form action="/parties/<%= @party.id %>/orders" method="post">
-	<p>
-		SELECT A FOOD:
-		<input name="food_name" placeholder="F O O D">
-	</p>
 	<div class="myButton2">
 	<input type="submit" value="ADD TO ORDER">
 	</div>
