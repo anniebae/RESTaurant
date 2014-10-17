@@ -16,8 +16,10 @@ Welcome to my RESTaurant site. Here are a few tips on how to navigate your way t
 - A party can 'change reservation' if they want to change the name of # of guests. Cancelling a reservation is an option as well.
 
 - From a specific party's page ('party/party_id') you can 'CHECKOUT' which leads to their receipt. Tip suggestions are listed below are easy calculation. Once they have 'PAID' you are lead back to the HOME page. That party is still kept in the databse but removed from the WAIT LIST. There is also an option to print the receipt below the 'PAY' button.
+------------------------------
+
 
 Annie can be reached at:
 voice: 123-456-7890
-web site: www.annieexample.com
+web site: www.anniexample.com
 e-mail: annie@example.com
