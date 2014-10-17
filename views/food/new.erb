@@ -1,29 +1,28 @@
+<link rel="stylesheet" href="stylesheets/styles.css">
 <% if @errors %>
-<div class="errors">
-<h6><i>no worries, we already have <%= @errors.count %> <%= @errors.count == 1 ? " " : "those" %></i></h6>
-  <ul>
-    <% @errors.each do |error|  %>
-      <li><h2><%= error %></h2></li>
-    <% end %>
-  </ul>
-</div>
+	<div class="errors">
+		<h6><i>no worries, we already have <%= @errors.count %> <%= @errors.count == 1 ? " " : "those" %></i></h6>
+  		<ul>
+    		<% @errors.each do |error|  %>
+      		<li><h2><%= error %></h2></li>
+    		<% end %>
+  		</ul>
+	</div>
 <% end %>
 
-<link rel="stylesheet" href="stylesheets/styles.css">
 <center>
 <form action="/foods" method="post">
 	<p>
 		FOOD: 
 		<input name="food[name]" placeholder="F O O D" />
 	</p>
-
 	<p>
 		PRICE:
 		<input name="food[price]" placeholder="P R I C E" />
 	</p>
 
 	<div class="myButton">
-	<input type="submit" value="ADD THIS" />
+		<input type="submit" value="ADD THIS" />
 	</div>
 	
 </form>

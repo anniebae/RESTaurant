@@ -7,7 +7,7 @@
 <br>
 <br>
 
-<p>--  Y O U R  O R D E R S  --</p>
+<p>--  O R D E R S  --</p>
 
 <table>
 	<% @party.orders.each do |order| %>
@@ -17,29 +17,27 @@
 		</td>
 		<td>
 			<form action="/parties/<%=@party.id%>/orders" method="post">
-			<input type="hidden" name="order_id" value="<%= order.id %>">
-			<input type="hidden" name="_method" value="delete">
-			<div class="myButton3">
-				<input type="submit" value="X">
-			</div>
+				<input type="hidden" name="order_id" value="<%= order.id %>">
+				<input type="hidden" name="_method" value="delete">
+				<div class="myButton3">
+					<input type="submit" value="X">
+				</div>
 			</form>
 		</td>
 		<td>
 			<form action="/orders/<%= order.id %>/dontlikethis" method="post">
-			<input type="hidden" name="_method" value="patch">
-			<div class="myButton4">
-			<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
-			</div>
+				<input type="hidden" name="_method" value="patch">
+				<div class="myButton4">
+					<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
+				</div>
 			</form>
 		</td>
-		<% end %>
-		</td>
-	
+		<% end %>	
 	</tr>
 </table>
 <br>
 <br>
-	<a href="/parties/<%= @party.id %>/receipt">Y O U R  B I L L</a>
+<a href="/parties/<%= @party.id %>/receipt">C H E C K O U T</a>
 
 
 
@@ -62,7 +60,7 @@
 <br>
 <br>
 <br>
-<a href="/parties/<%= @party.id %>/edit">CHANGE RESERVATION</a>
+<a href="/parties/<%= @party.id %>/edit">EDIT RESERVATION</a>
 
 <br>
 <br>

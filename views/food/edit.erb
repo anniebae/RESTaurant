@@ -2,20 +2,18 @@
 <center>
 <form action="/foods/<%= @food.id %>" method="post">
 	<input type="hidden" name="_method" value="patch">
-	<p>
-		FOOD:
-		<input name="food[name]" value="<%= @food.name %>">
-	</p>
+		<p>
+			FOOD:
+			<input name="food[name]" value="<%= @food.name %>">
+		</p>
+		<p>
+			PRICE:
+			<input name="food[price]" value="<%= @food.price %>">
+		</p>
 
-	<p>
-		PRICE:
-		<input name="food[price]" value="<%= @food.price %>">
-	</p>
-
-
-	<div class="myButton">
-	<input type="submit" value="FIX THIS DISH">
-	</div>
+		<div class="myButton">
+			<input type="submit" value="FIX THIS DISH">
+		</div>
 	
 </form>
 </center>
