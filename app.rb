@@ -86,15 +86,8 @@ end
 
 get '/parties/:id' do
 	@party = Party.find(params[:id])
-	# @party_shows_foods = @party.foods
-	@foods = Food.all
-	# get all foods so i can create drop 
-	# down menu to add foods to a party 
-
+	@foods = Food.all 
 	erb :'party/show'
-
-
-
 end
 
 delete '/parties/:id' do
@@ -104,15 +97,10 @@ end
 
 #-----------------------------------------
 
-# Creates a new order
 post '/parties/:id/orders' do
 	food = Food.where(name: params[:food_name])
 	party = Party.find(params[:id])
 	party.foods << food
-	# Order.create({
-	# 	food_id: food.first.id,
-	# 	party_id: party.id
-	# })
 	redirect "/parties/#{party.id}"
 end
 
@@ -122,9 +110,6 @@ delete '/parties/:party_id/orders' do
 	redirect "/parties/#{party_id}"
 end
 
-
-
-# Saves the party's receipt data to a file. Displays the content of the receipt. Offer the file for download.
 get '/parties/:id/receipt' do
 	@party = Party.find(params[:id])
 	erb :'party/receipt'
