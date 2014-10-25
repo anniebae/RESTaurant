@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
 
+<h2><%= @party.name %></h2>
+
 <center>
 	<form action="/parties/<%= @party.id %>" method="post">
 		<input type="hidden" name="_method" value="patch" >

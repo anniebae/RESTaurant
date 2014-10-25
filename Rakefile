@@ -28,9 +28,9 @@ namespace :db do
 		require_relative 'models/order'
 		require_relative 'models/party'
 
-		Food.create({name: 'Pasta', cents: 1500})
-		Food.create({name: 'Sandwich', cents: 1100})
-		Food.create({name: 'Salad', cents: 1400})
+		Food.create({name: 'Pasta', price: 15})
+		Food.create({name: 'Sandwich', price: 11})
+		Food.create({name: 'Salad', price: 14})
 
 
 		Party.create({name: 'Bae', size_of_party: 4})

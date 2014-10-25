@@ -27,3 +27,10 @@
 	
 </form>
 </center>
+
+
+<!-- Partial STUFF BELOW -->
+
+<h2>New Food</h2>
+<%= form_open(Food.new) %>
+<%= erb(:'foods/_form', :locals => {food: Food.new}) %>

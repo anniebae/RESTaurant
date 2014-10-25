@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
+<% if false %>
 <center>
 <form action="/foods/<%= @food.id %>" method="post">
 	<input type="hidden" name="_method" value="patch">
@@ -17,3 +18,12 @@
 	
 </form>
 </center>
+<% end %>
+
+
+<%= form_open(@food, method: 'patch') %>
+	<%= input_tag(type: 'text', resource: 'food', name: 'name', value: @food.name) %>
+	<%= input_tag(type: 'text', resource: 'food', name: 'price', value: @food.price) %>
+	<%= input_tag(type: 'submit') %>
+
+<%= form_close %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020221902) do
+ActiveRecord::Schema.define(version: 20141025201152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141020221902) do
   create_table "orders", force: true do |t|
     t.integer  "food_id"
     t.integer  "party_id"
-    t.boolean  "is_charged", default: true
+    t.boolean  "charge",     default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20141020221902) do
   create_table "parties", force: true do |t|
     t.string   "name"
     t.integer  "size_of_party"
-    t.boolean  "is_paid",       default: false
+    t.boolean  "paid",          default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

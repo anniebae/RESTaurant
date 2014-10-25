@@ -1,0 +1,12 @@
+<div class='party'>
+	<%= link_to(record_path(party), "<button>#{party.name}</button>") %>
+
+	<ul>
+		<% party.orders.each do |order| %>
+			<li>
+				<%= order.food.name %>
+			</li>
+		<% end %>
+	</ul>
+
+</div>

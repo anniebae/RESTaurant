@@ -1,0 +1,31 @@
+<h2><%= link_to(new_party_path, 'new party') %></h2>
+<% @parties.each do |party| %>
+	<%= erb(:_party_overview, {:locals => { party: party, fun: "so much fun" }})%>
+<% end %>
+
+
+
+
+
+
+<table border="5" width="50%" CELLSPACING="3">
+	<tr>
+		<th colspan="2">
+			<h2><span><a href="/foods">M E N U</a></span></h2>
+			<span><a href="/foods/new"><i>Add to this menu</i></a></span>
+			<br>
+			<br>
+		</th>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<% @foods.each do |food| %>
+	<tr align="center">
+		<td><span><a href="/foods/<%= food.id %>"><%= food.name.upcase %></span></a></td>
+		<td>$<%= food.price %></td>
+	</tr>
+	<% end %>
+</table>
+
+<br>
+<br>
