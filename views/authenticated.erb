@@ -1,8 +1,12 @@
-<h2><%= link_to(new_party_path, 'new party') %></h2>
-<% @parties.each do |party| %>
-	<%= erb(:_party_overview, {:locals => { party: party, fun: "so much fun" }})%>
-<% end %>
+<h1>Hi, <%= @current_user.username %>!</h1>
 
+<form action="/sessions" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Logout">
+</form>
+
+<br>
+<br>
 
 <table border="5" width="50%" CELLSPACING="3">
 	<tr>
