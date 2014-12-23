@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   end
 
   get '/new' do
+    @new_food = Food.new
     erb :'food/new'
   end
 
