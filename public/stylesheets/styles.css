@@ -41,6 +41,13 @@ a:hover {
 	color: rgb(138, 125, 115);
 }
 
+.menu-button {
+  background-color: white;
+  width: 9%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 div.myButton4 input {
   cursor:pointer;
 	width: 130px;
