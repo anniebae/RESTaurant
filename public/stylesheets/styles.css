@@ -103,3 +103,34 @@ span a:hover {
 .root-restaurant {
   margin-bottom: 50px;
 }
+
+#cancel-reservation-button {
+  width: 150px;
+  height: 25px;
+}
+
+.party-edit-cancel {
+  padding-bottom: 5%;
+}
+
+.selectfood-addorder {
+  padding-bottom: 5%;
+}
+
+.orders-x-dontlikethis {
+  text-align: center;
+  padding-bottom: 8%;
+}
+
+#orders-table {
+  margin-left: 41%;
+}
+
+.receipt-table {
+  margin-left: 33%;
+  margin-bottom: 4%;
+}
+
+#pay-button {
+  padding-bottom: 3%;
+}

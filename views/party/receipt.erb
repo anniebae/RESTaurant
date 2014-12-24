@@ -1,67 +1,61 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+	<link rel="stylesheet" href="stylesheets/styles.css">
 
-<table border="5" width="35%" CELLSPACING="3">
-	<tr>
-		<th colspan="2">
-			<h2>R E S T a u r a n t</h2>
-			<p><i>r e c e i p t</i></p>
-			<p>Party: <%= @party.name %></p>
-		</th>
-	</tr>
-	<tr>
-		<th>ORDERED ITEMS</th>
-		<th>$</th>
-	</tr>
-	<% total = 0 %>
-	<% @party.orders.each do |order| %>
-		<tr align="center">
-			<td><%= order.food.name %></td>
-			<% if order.charge %>
-				<td><%= order.food.price %></td>
-			<% else %>
-				<td>0</td>
-			<% end %>
-			<br>
+	<table border="5" width="35%" CELLSPACING="3" class="receipt-table">
+		<tr>
+			<th colspan="2">
+				<h2>R E S T a u r a n t</h2>
+				<p><i>r e c e i p t</i></p>
+				<p>Party: <%= @party.name %></p>
+			</th>
 		</tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<% if order.charge %>
-			<% total += order.food.price %>
+		<tr>
+			<th>ORDERED ITEMS</th>
+			<th>$</th>
+		</tr>
+		<% total = 0 %>
+		<% @party.orders.each do |order| %>
+			<tr align="center">
+				<td><%= order.food.name %></td>
+				<% if order.charge %>
+					<td><%= order.food.price %></td>
+				<% else %>
+					<td>0</td>
+				<% end %>
+				<br>
+			</tr>
+			<tr></tr>
+			<tr></tr>
+			<tr></tr>
+			<% if order.charge %>
+				<% total += order.food.price %>
+			<% end %>
 		<% end %>
-	<% end %>
-	<tr>
-		<th>TOTAL</th>
-		<th>$<%= total.round(2)%></th>
-	</tr>
-	<tr>
-		<th></th>
-		<th></th>
-	</tr>
-	<tr>
-		<th colspan="2"><i>tip suggestions: </i></th>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<center><i>15% = $<%= (total * 0.15).round(2) %>
-			<br>20% = $<%= (total * 0.20).round(2) %>
-			<br>25% = $<%= (total * 0.25).round(2) %></i></center>
-		</td>
-	</tr>
-</table>
+		<tr>
+			<th>TOTAL</th>
+			<th>$<%= total.round(2)%></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr>
+			<th colspan="2"><i>tip suggestions: </i></th>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<center><i>15% = $<%= (total * 0.15).round(2) %>
+				<br>20% = $<%= (total * 0.20).round(2) %>
+				<br>25% = $<%= (total * 0.25).round(2) %></i></center>
+			</td>
+		</tr>
+	</table>
 
-<br>
-<br>
 
-<form action="/parties/<%= @party.id %>/paybill" method="post">
-	<input type="hidden" name="_method" value="patch">
-		<div class="myButton">
-			<input type="submit" onclick="return confirm('PAYMENT PROCESSED - Come back soon!')" value="P A Y">
-		</div>
-</form>
+	<form action="/parties/<%= @party.id %>/paybill" method="post">
+		<input type="hidden" name="_method" value="patch">
+			<div class="myButton" id="pay-button">
+				<input type="submit" onclick="return confirm('PAYMENT PROCESSED - Come back soon!')" value="P A Y">
+			</div>
+	</form>
 
-<br>
-<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>
-
-<br>
-<br>
+	<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>

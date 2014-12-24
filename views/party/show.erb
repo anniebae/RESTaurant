@@ -1,74 +1,65 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
-	<center>
-	<h3><%= @party.name.upcase %>: <%= @party.size_of_party %> guests</h3>
+	<div class="party-edit-cancel">
+		<h3>
+			<%= @party.name.upcase %>: <%= @party.size_of_party %> guests 
+			(<a href="/parties/<%= @party.id %>/edit">edit</a>)
+		</h3>
 
-<br>
-<a href="/parties/<%= @party.id %>/edit">EDIT RESERVATION</a>
-<br>
-<br>
+		<form action="/parties/<%= @party.id %>" method="post">
+			<input type="hidden" name="_method" value="delete" />
+			<div class="myButton">
+			<input type="submit" value="CANCEL RESERVATION" id="cancel-reservation-button">
+			</div>
+		</form>
+	</div>
 
-<p>--  O R D E R S  --</p>
+	<div class="selectfood-addorder">
+		<form action="/parties/<%= @party.id %>/orders" method="post">
+			SELECT A FOOD ITEM:
+			<ul>
+				<% @foods.each do |food| %>
+					<input type="radio" name="food_name" value="<%= food.name %>"><%= food.name %>
+			 	<% end %>
+			</ul>
+			<div class="myButton2">
+			<input type="submit" value="ADD TO ORDER">
+			</div>
+		</form>
+	</div>
 
-<table>
-	<% @party.orders.each do |order| %>
-	<tr>
-		<td>
-			<%= order.food.name %>
-		</td>
-		<td>
-			<form action="/parties/<%=@party.id%>/orders" method="post">
-				<input type="hidden" name="order_id" value="<%= order.id %>">
-				<input type="hidden" name="_method" value="delete">
-				<div class="myButton3">
-					<input type="submit" value="X">
-				</div>
-			</form>
-		</td>
-		<td>
-			<form action="/orders/<%= order.id %>/dontlikethis" method="post">
-				<input type="hidden" name="_method" value="patch">
-				<div class="myButton4">
-					<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
-				</div>
-			</form>
-		</td>
-		<% end %>	
-	</tr>
-</table>
-<br>
-<br>
+<div class="orders-x-dontlikethis">
+	<p>--  O R D E R S  --</p>
+	<table id="orders-table">
+		<% @party.orders.each do |order| %>
+		<tr>
+			<td>
+				<%= order.food.name %>
+			</td>
+			<td>
+				<form action="/parties/<%=@party.id%>/orders" method="post">
+					<input type="hidden" name="order_id" value="<%= order.id %>">
+					<input type="hidden" name="_method" value="delete">
+					<div class="myButton3">
+						<input type="submit" value="X">
+					</div>
+				</form>
+			</td>
+			<td>
+				<form action="/orders/<%= order.id %>/dontlikethis" method="post">
+					<input type="hidden" name="_method" value="patch">
+					<div class="myButton4">
+						<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
+					</div>
+				</form>
+			</td>
+			<% end %>	
+		</tr>
+	</table>
+</div>
+
+
 <a href="/parties/<%= @party.id %>/receipt">C H E C K O U T</a>
 
 
-
-<br>
-<br>
-<form action="/parties/<%= @party.id %>/orders" method="post">
-	SELECT A FOOD ITEM:
-<ul>
-	<% @foods.each do |food| %>
-		<input type="radio" name="food_name" value="<%= food.name %>"><%= food.name %>
- 	<% end %>
-</ul>
-	<div class="myButton2">
-	<input type="submit" value="ADD TO ORDER">
-	</div>
-<br>
-<br>
-</form>
-
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<form action="/parties/<%= @party.id %>" method="post">
-	<input type="hidden" name="_method" value="delete" />
-	<div class="myButton">
-	<input type="submit" value="CANCEL RESERVATION">
-	</div>
-</form>
-</center>
 <br>
 <br>
