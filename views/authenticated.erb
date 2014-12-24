@@ -1,5 +1,19 @@
 <h1 class="welcome-authenticated-user">Welcome, <%= @current_user.username %>!</h1>
 
+<div class="menu-button">
+	<a href="/foods">M E N U</a>
+</div>
+
+	<h2>
+		<br>
+		<a href="/parties">GUEST LIST</a>
+		<br>
+		<a href="/parties/new">Make a reservation</a>
+		<br>
+		<br>
+	</h2>
+
+
 <form action="/sessions" method="post">
 	<input type="hidden" name="_method" value="delete">
 	<div class="myButton">
@@ -11,6 +25,3 @@
 <br>
 
 
-<div class="menu-button">
-	<a href="/foods">M E N U</a>
-</div>

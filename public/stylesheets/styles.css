@@ -83,3 +83,7 @@ span a {
 span a:hover {
 	color: #8AABCC;
 }
+
+.restaurant {
+  width: 60%;
+}
