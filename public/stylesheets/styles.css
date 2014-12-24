@@ -48,6 +48,8 @@ a:hover {
   width: 9%;
   padding-top: 4px;
   padding-bottom: 4px;
+  margin-left: 45%;
+  font-family: 'Cinzel', serif;
 }
 
 div.myButton4 input {
@@ -78,12 +80,20 @@ div.myButton input {
   border: none;
 }
 
+#menu-table {
+  margin-left: 27%;
+}
+
+#guest-list-table {
+  margin-left: 2%;
+}
+
 span a {
-	color: #CCF5FF;
+	color: white;
 }
 
 span a:hover {
-	color: #8AABCC;
+	color: lightgrey;
 }
 
 .restaurant-img {
