@@ -64,6 +64,7 @@ DEPENDENCIES
   bcrypt
   pg
   pry
+  rack
   rake
   sinatra
   sinatra-activerecord

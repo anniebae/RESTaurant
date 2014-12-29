@@ -7,3 +7,5 @@ gem 'pg'
 gem 'pry'
 gem 'bcrypt'
 gem 'rake'
+
+gem 'rack'

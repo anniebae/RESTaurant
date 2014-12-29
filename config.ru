@@ -1,6 +1,10 @@
 require 'bundler'
 Bundler.require(:default)
 
+run lambda { |env| [200, {'Content-Type'=>'text/plain'}, StringIO.new("Hello World!\n")] }
+
+
+
 Dir.glob('./{models,helpers,controllers}/*.rb').each do |file|
   require file
   puts "required #{file}"
