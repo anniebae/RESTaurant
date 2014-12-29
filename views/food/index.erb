@@ -1,21 +1,34 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+						<form action="/sessions" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="submit" value="LOG OUT">
+						</form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
 
-<table border="5" width="50%" CELLSPACING="3" id="menu-table">
-	<tr>
-		<th colspan="2">
-			<h2><span><a href="/foods">M E N U</a></span></h2>
-			<span><a href="/foods/new"><i>Add to this menu</i></a></span>
-			<br>
-			<br>
-		</th>
-	</tr>
-	<tr></tr>
-	<tr></tr>
-	<% @foods.each do |food| %>
-	<tr align="center">
-		<td><span><a href="/foods/<%= food.id %>"><%= food.name.upcase %></span></a></td>
-		<td>$<%= food.price %></td>
-	</tr>
-	<% end %>
-</table>
+<div class="menu-wrapper">
+	<table border="5" width="50%" CELLSPACING="3" id="menu-table">
+		<tr>
+			<th colspan="2">
+				<h2><span><a href="/foods">M E N U</a></span></h2>
+				<span><a href="/foods/new"><i>Add to this menu</i></a></span>
+			</th>
+		</tr>
+		<% @foods.each do |food| %>
+		<tr align="center">
+			<td><span><a href="/foods/<%= food.id %>"><%= food.name.upcase %></span></a></td>
+			<td>$<%= food.price %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>

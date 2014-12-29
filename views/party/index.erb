@@ -1,9 +1,22 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+						<form action="/sessions" method="post">
+							<input type="hidden" name="_method" value="delete">
+							<input type="submit" value="LOG OUT">
+						</form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<!-- <h2><%= new_party_path %></h2> -->
+<div class="guestlist-wrapper">
 
-
-<center>
 <table border="5" width="40%" CELLSPACING="3" id="guest-list-table">
 	<tr>
 		<th colspan="2">
@@ -25,7 +38,5 @@
 	</tr>
 	<% end %>
 </table>
-</center>
 
-<br>
-<br>
+</div>
