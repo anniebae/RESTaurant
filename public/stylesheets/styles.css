@@ -19,13 +19,53 @@ h6 {
 }
 
 body {
-	font-size: 16px;
-	font-family: 'Cinzel', serif;
+	font-size: 14px;
+  font-weight: 100;
+	font-family: 'Helvetica';
 	background-image: url('http://www.cuzzsoft.com/wallbank/91-black-metal-texture-wallpaper.jpg');
 	background-repeat: no-repeat;
 	color: white;
   margin-top: -80px;
   text-align: center;
+}
+
+
+header {
+  height: 80px;
+  background-color: #730000;
+  width: 100%;
+  z-index: 900;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo {
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+}
+
+#navcontainer ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#navcontainer ul li {
+  display: inline;
+}
+
+#navcontainer ul li a {
+  text-decoration: none;
+  padding: .2em 1em;
+}
+
+.signin-wrapper {
+  margin: 25%;
+}
+
+.authenticated-wrapper {
+  margin: 20%;
 }
 
 ul {
@@ -95,7 +135,7 @@ span a:hover {
 }
 
 .restaurant-img {
-  width: 50%;
+  width: 100%;
 }
 
 .root-restaurant {
