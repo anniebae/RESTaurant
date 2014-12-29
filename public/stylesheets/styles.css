@@ -31,7 +31,6 @@ body {
   text-align: center;
 }
 
-
 header {
   height: 80px;
   background-color: #730000;
@@ -45,6 +44,28 @@ header {
 .logo {
   font-family: 'Cinzel', serif;
   font-size: 40px;
+}
+
+#navcontainer form {
+  display: inline-block;
+}
+
+#navcontainer input {
+  background: none;
+  border: none;
+  color: rgb(206, 197, 180);
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color 0.5s ease;
+}
+
+#navcontainer input:hover {
+  color: #FCFAF1
 }
 
 #navcontainer ul {
