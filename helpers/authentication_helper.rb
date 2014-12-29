@@ -7,7 +7,6 @@ module Sinatra
         nil
       end
     end
-
     def authenticate!
       redirect '/' unless current_user
     end

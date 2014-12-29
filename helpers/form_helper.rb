@@ -11,7 +11,6 @@ module Sinatra
 			action = resource_index_path(record.class.to_s.downcase)
 			open_form_tag(action, method, record)
 		end
-
 		def open_form_tag(action, method, record)
 			full_action = [action, record.id].compact.join("/")
 			str = ""
@@ -22,7 +21,6 @@ module Sinatra
 				str << "<form action='#{full_action}' method='#{method}'>"
 			end
 		end
-
 		def input_tag(options={})
 			type = options[:type]
 			resource = options[:resource]
@@ -31,7 +29,6 @@ module Sinatra
 			placeholder = options[:placeholder]
 			"<input type='#{type}' name='#{resource}[#{name}]' value='#{value}' placeholder='#{placeholder}' />"
 		end
-
 		def form_close()
 			"</form>"
 		end

@@ -9,12 +9,9 @@ class ApplicationController < Sinatra::Base
     adapter: 'postgresql',
     database: 'restaurant_db'
     })
-
   set :views, File.expand_path('../../views', __FILE__)
   set :public_folder, File.expand_path('../../public', __FILE__)
-
   enable :sessions, :method_override
-
   get '/' do
     @foods = Food.all
     @parties = Party.all
