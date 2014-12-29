@@ -6,7 +6,9 @@ h1 {
 }
 
 h2 {
+  color: #FCFAF1;
 	font-size: 1.5em;
+  font-weight: 200;
 }
 
 h6 {
@@ -60,7 +62,11 @@ header {
   padding: .2em 1em;
 }
 
-.signin-wrapper {
+form {
+  margin-left: -12%;
+}
+
+.enter-wrapper {
   margin: 25%;
 }
 
@@ -74,11 +80,12 @@ ul {
 
 a {
 	text-decoration: none;
+  transition: color 0.5s ease;
 	color: rgb(206, 197, 180);
 }
 
 a:hover {
-	color: rgb(138, 125, 115);
+	color: #FCFAF1;
 }
 
 .menu-button {

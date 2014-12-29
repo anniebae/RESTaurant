@@ -1,7 +1,60 @@
-<h2>JOIN the RESTaurant COMMUNITY</h2>
+  <header>
+    <a href="/" class="logo">RESTaurant</a>
+    <nav>
+      <div id="navcontainer">
+        <ul>
+          <li>
+            <a href="/sessions/new">LOG IN</a>
+          </li>
+          <li>
+            <a href="/users/new">SIGN UP</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-<form action="/users" method="post">
-	<input type="text" name="user[username]" placeholder="Username">
-	<input type="password" name="password" placeholder="Password">
-	<input type="submit" value="JOIN">
+<div class="enter-wrapper">
+<h2>JOIN the RESTaurant COMMUNITY!</h2>
+
+
+
+<form class="pure-form pure-form-aligned" action="/users" method="post">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Username</label>
+            <input id="name" type="text" name="user[username]" placeholder="Username">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" placeholder="Password">
+        </div>
+
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form action="/users" method="post" class="pure-form pure-form-stacked">
+  <fieldset>
+  	Username<input type="text" name="user[username]" placeholder="Username">
+  	Password<input type="password" name="password" placeholder="Password">
+  	<input type="submit" value="JOIN">
+  </fieldset>
+</form> -->
+
+</div>

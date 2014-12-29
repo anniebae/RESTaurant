@@ -1,23 +1,24 @@
-  <header>
-    <a href="/" class="logo">RESTaurant</a>
-    <nav>
-      <div id="navcontainer">
-        <ul>
-          <li>
-            <a href="/sessions/new">LOG IN</a>
-          </li>
-          <li>
-            <a href="/users/new">SIGN UP</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-<div class="signin-wrapper">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/sessions/new">LOG IN</a>
+        </li>
+        <li>
+          <a href="/users/new">SIGN UP</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="enter-wrapper">
 <h2>LOG IN</h2>
-<form action="/sessions" method="post">
-	<input type="text" name="username" placeholder="Username">
-	<input type="password" name="password" placeholder="Password">
+<form action="/sessions" method="post" class="pure-form pure-form-stacked">
+	<input type="text" name="username" placeholder="Username">Username</input>
+	<input type="password" name="password" placeholder="Password">Password</input>
 	<input type="Submit" value="ENTER">
 </form>
 
