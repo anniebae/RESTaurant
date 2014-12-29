@@ -1,16 +1,49 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
-<center>
-<h3><%= @food.name %></h3>
-<h4>$<%= @food.price %></h4>
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+          <form action="/sessions" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="LOG OUT">
+          </form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<p>PARTIES WHO ORDERED <%= @food.name.upcase %></p>
+
+
+<div class="food-id-wrapper">
+
+<span>PARTIES WHO ORDERED <%= @food.name.upcase %> ($<%= @food.price %>) :</span>
 <ul>
-	<% @food_shows_parties.each do |party| %>
-	<li>
-		<%= party.name %>
-	</li>
-	<% end %>
+  <% @food_shows_parties.each do |party| %>
+  <li>
+    <%= party.name %>
+  </li>
+  <% end %>
 </ul>
+
+
+<div class="food-id-buttons">
+<ul>
+  <li>
+    <a class="pure-button" href="/foods/<%= @food.id %>/edit">Fix this dish</a>
+  </li>
+<form action="/foods/<%= @food.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="pure-button">Remove this dish</button>
+</form>
+</ul>
+</div>
+
+
+<!-- <button class="pure-button">A Pure Button</button>
+
 
 <a href="/foods/<%= @food.id %>/edit">FIX THIS DISH</a>
 
@@ -23,4 +56,4 @@
 	</div>
 
 </form>
-</center>
+ --></div>

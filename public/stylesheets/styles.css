@@ -143,9 +143,21 @@ a:hover {
   margin: 20%;
 }
 
-
 .newfood-form {
   margin-top: 3%;
+}
+
+.food-id-wrapper {
+  margin-top: 15%;
+}
+
+.food-id-buttons li {
+  display: block;
+}
+
+span {
+  font-family: 'Cinzel', serif;
+  color: rgb(206, 197, 180);
 }
 
 .menu-button {
