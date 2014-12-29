@@ -1,4 +1,20 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+            <form action="/sessions" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
+      </ul>
+    </div>
+  </nav>
+</header>
+
 <% if @errors %>
 	<div class="errors">
 		<h6><i>no worries, we already have <%= @errors.count %> <%= @errors.count == 1 ? " " : "those" %></i></h6>
@@ -10,22 +26,21 @@
 	</div>
 <% end %>
 
-
-
-<center>
-<form action="/foods" method="post">
-	<p>
-		FOOD: 
-		<input name="food[name]" placeholder="F O O D" />
-	</p>
-	<p>
-		PRICE:
-		<input name="food[price]" placeholder="P R I C E" />
-	</p>
-
-	<div class="myButton">
-		<input type="submit" value="ADD THIS" />
-	</div>
-	
-</form>
-</center>
+<div class="newfood-wrapper">
+  <h2>ADD TO THIS MENU</h2>
+  <form action="/foods" method="post" class="pure-form pure-form-aligned">
+    <fieldset>
+      <div class="pure-control-group">
+        <label>Food: </label>
+        <input type="text" name="food[name]" placeholder="F O O D">
+      </div>
+      <div class="pure-control-group">
+        <label>Price: </label>
+        <input type="text" name="food[price]" placeholder="P R I C E">
+      </div>
+      <div class="pure-controls">
+        <button type="submit" class="pure-button">ADD</button>
+      </div>
+    </fieldset>
+  </form>
+</div>

@@ -139,6 +139,15 @@ a:hover {
   margin: 7%;
 }
 
+.newfood-wrapper {
+  margin: 20%;
+}
+
+
+.newfood-form {
+  margin-top: 3%;
+}
+
 .menu-button {
   background-color: white;
   width: 9%;
@@ -174,14 +183,6 @@ div.myButton input {
   width: 145px;
   height: 45px;
   border: none;
-}
-
-span a {
-	color: white;
-}
-
-span a:hover {
-	color: lightgrey;
 }
 
 .restaurant-img {

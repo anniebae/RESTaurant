@@ -16,27 +16,25 @@
 </header>
 
 <div class="guestlist-wrapper">
-
-<table border="5" width="40%" CELLSPACING="3" id="guest-list-table">
-	<tr>
-		<th colspan="2">
-			<h2>GUEST LIST</h2>
-		</th>
-	</tr>
-	<tr>
-		<th>Party Name: </th>
-		<th># of People</th>
-	</tr>
-	<% @parties.each do |party| %>
-	<tr align="center">
-		<td>
-			<a href="/parties/<%= party.id %>"><%= party.name.upcase %></a>
-		</td>
-		<td>
-			<%= party.size_of_party %>
-		</td>
-	</tr>
-	<% end %>
-</table>
-
+	<table border="5" width="40%" CELLSPACING="3" id="guest-list-table">
+		<tr>
+			<th colspan="2">
+				<h2>GUEST LIST</h2>
+			</th>
+		</tr>
+		<tr>
+			<th>Party Name: </th>
+			<th># of People</th>
+		</tr>
+		<% @parties.each do |party| %>
+		<tr align="center">
+			<td>
+				<a href="/parties/<%= party.id %>"><%= party.name.upcase %></a>
+			</td>
+			<td>
+				<%= party.size_of_party %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
 </div>
