@@ -22,7 +22,7 @@
 <span>PARTIES WHO ORDERED <%= @food.name.upcase %> ($<%= @food.price %>) :</span>
 <ul>
   <% @food_shows_parties.each do |party| %>
-  <li>
+  <li class="parties-who-ordered">
     <%= party.name %>
   </li>
   <% end %>
@@ -30,9 +30,9 @@
 
 
 <div class="food-id-buttons">
-  <ul>
+  <ul class="food-id-buttons-ul">
     <li>
-      <a class="pure-button" href="/foods/<%= @food.id %>/edit">Fix this dish</a>
+      <a class="pure-button fix-button" href="/foods/<%= @food.id %>/edit">Fix this dish</a>
     </li>
   <form action="/foods/<%= @food.id %>" method="post" class="removedish-form">
     <input type="hidden" name="_method" value="delete">

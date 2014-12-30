@@ -143,6 +143,7 @@ form {
   width: 100%;
 }
 
+
 table {
   font-family: 'Cinzel', serif;
 }
@@ -163,6 +164,14 @@ a {
 
 a:hover {
 	color: #FCFAF1;
+}
+
+.fix-button {
+  font-weight: 400;
+}
+
+.fix-button:hover {
+  color: black;
 }
 
 #guest-list-table {
@@ -189,9 +198,21 @@ a:hover {
   display: block;
 }
 
+.food-id-buttons-ul {
+  margin-left: -4%;
+  margin-top: 5%;
+}
+
 span {
   font-family: 'Cinzel', serif;
   color: rgb(206, 197, 180);
+  font-size: 22px;
+}
+
+.parties-who-ordered {
+  margin-left: -5%;
+  font-size: 18px;
+  font-family: 'Cinzel', serif;
 }
 
 .menu-button {
