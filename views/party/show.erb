@@ -39,48 +39,66 @@
 
 
 
-	<div class="selectfood-addorder">
+<div class="pure-g">
+
+	<div class="selectfood-addorder pure-u-1-2">
 		<form action="/parties/<%= @party.id %>/orders" method="post">
-			SELECT A FOOD ITEM:
 			<ul>
+			SELECT A FOOD ITEM:
 				<% @foods.each do |food| %>
-					<input type="radio" name="food_name" value="<%= food.name %>"><%= food.name %>
+					<ul>
+						<li>
+							<input type="radio" name="food_name" value="<%= food.name %>"> <%= food.name %>
+						</li>
+					</ul>
 			 	<% end %>
 			</ul>
 			<div class="myButton2">
-			<input type="submit" value="ADD TO ORDER">
+			<input type="submit" value="ADD TO ORDER" class="pure-button">
 			</div>
 		</form>
 	</div>
 
-<div class="orders-x-dontlikethis">
-	<p>--  O R D E R S  --</p>
+<div class="orders-x-dontlikethis pure-u-1-2">
 	<table id="orders-table">
+	<tr>
+		<th colspan="3">
+		--  O R D E R S  --
+		</th>
+	</tr>
 		<% @party.orders.each do |order| %>
 		<tr>
-			<td>
+			<td width="50%">
 				<%= order.food.name %>
 			</td>
-			<td>
+			<td width="20%">
 				<form action="/parties/<%=@party.id%>/orders" method="post">
 					<input type="hidden" name="order_id" value="<%= order.id %>">
 					<input type="hidden" name="_method" value="delete">
-					<div class="myButton3">
 						<input type="submit" value="X">
-					</div>
 				</form>
 			</td>
-			<td>
+			<td width="30%">
 				<form action="/orders/<%= order.id %>/dontlikethis" method="post">
 					<input type="hidden" name="_method" value="patch">
-					<div class="myButton4">
 						<input type="submit" onclick="return confirm('OK - no charge')" value="don't like this">
-					</div>
 				</form>
 			</td>
 			<% end %>	
 		</tr>
 	</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 
