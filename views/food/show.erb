@@ -6,10 +6,10 @@
         <li>
           <a href="/foods">MENU</a>
         </li>
-          <form action="/sessions" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="LOG OUT">
-          </form>
+            <form action="/sessions" method="post" class="logout-form">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
       </ul>
     </div>
   </nav>
@@ -30,30 +30,16 @@
 
 
 <div class="food-id-buttons">
-<ul>
-  <li>
-    <a class="pure-button" href="/foods/<%= @food.id %>/edit">Fix this dish</a>
-  </li>
-<form action="/foods/<%= @food.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit" class="pure-button">Remove this dish</button>
-</form>
-</ul>
+  <ul>
+    <li>
+      <a class="pure-button" href="/foods/<%= @food.id %>/edit">Fix this dish</a>
+    </li>
+  <form action="/foods/<%= @food.id %>" method="post" class="removedish-form">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="pure-button">Remove this dish</button>
+  </form>
+  </ul>
 </div>
 
 
-<!-- <button class="pure-button">A Pure Button</button>
-
-
-<a href="/foods/<%= @food.id %>/edit">FIX THIS DISH</a>
-
-<br>
-<br>
-<form action="/foods/<%= @food.id %>" method="post">
-	<input type="hidden" name="_method" value="delete" />
-	<div class="myButton">
-		<input type="submit" value="REMOVE THIS DISH">
-	</div>
-
-</form>
- --></div>
+</div>

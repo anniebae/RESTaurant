@@ -89,6 +89,40 @@ form {
   margin-left: -12%;
 }
 
+.logout-form {
+  margin-left: 3px;
+}
+
+
+
+
+.food-id-buttons form {
+  display: inline-block;
+}
+
+.food-id-buttons input {
+  background: none;
+  border: none;
+  color: rgb(206, 197, 180);
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color 0.5s ease;
+}
+
+.food-id-buttons ul li {
+  display: inline;
+}
+
+.removedish-form {
+  margin-left: 10px;
+}
+
+
 .enter-wrapper {
   margin: 15%;
 }
