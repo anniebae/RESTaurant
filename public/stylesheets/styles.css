@@ -203,16 +203,28 @@ a:hover {
   margin-top: 5%;
 }
 
-span {
+.form-caption {
   font-family: 'Cinzel', serif;
   color: rgb(206, 197, 180);
   font-size: 22px;
+}
+
+.newparty-wrapper {
+  margin: 20%;
+}
+
+.newparty-form {
+  margin-top: 5%;
 }
 
 .parties-who-ordered {
   margin-left: -5%;
   font-size: 18px;
   font-family: 'Cinzel', serif;
+}
+
+.edit-food {
+  margin: 20%;
 }
 
 .menu-button {

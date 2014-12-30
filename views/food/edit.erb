@@ -1,29 +1,50 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
-<% if false %>
-<center>
-<form action="/foods/<%= @food.id %>" method="post">
-	<input type="hidden" name="_method" value="patch">
-		<p>
-			FOOD:
-			<input name="food[name]" value="<%= @food.name %>">
-		</p>
-		<p>
-			PRICE:
-			<input name="food[price]" value="<%= @food.price %>">
-		</p>
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+            <form action="/sessions" method="post" class="logout-form">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-		<div class="myButton">
-			<input type="submit" value="FIX THIS DISH">
-		</div>
-	
-</form>
-</center>
+<% if false %>
+	<form action="/foods/<%= @food.id %>" method="post">
+		<fieldset>
+			<div class="pure-control-group">
+				<label>Food: </label>
+				<input type="text" name="food[name]" value="<%= @food.name %>">
+			</div>
+
+			<div class="pure-control-group">
+				<label>Price: </label>
+				<input type="text" name="food[price]" value="<%= @food.price %>">
+			</div>
+
+			<div class="pure-controls">
+				<button type="submit" class="pure-button">
+					FIX THIS DISH
+				</button>
+			</div>
+		</fieldset>
+	</form>>
 <% end %>
 
 
-<%= form_open(@food, method: 'patch') %>
-	<%= input_tag(type: 'text', resource: 'food', name: 'name', value: @food.name) %>
-	<%= input_tag(type: 'text', resource: 'food', name: 'price', value: @food.price) %>
-	<%= input_tag(type: 'submit') %>
 
-<%= form_close %>
+<div class="edit-food">
+	<span class="form-caption">FIX THIS DISH</span>
+		<%= form_open(@food, method: 'patch') %>
+			<%= input_tag(type: 'text', resource: 'food', name: 'name', value: @food.name) %>
+			<%= input_tag(type: 'text', resource: 'food', name: 'price', value: @food.price) %>
+			<%= input_tag(type: 'submit', value: "Submit") %>
+
+		<%= form_close %>
+</div>

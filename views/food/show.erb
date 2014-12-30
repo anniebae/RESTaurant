@@ -19,7 +19,7 @@
 
 <div class="food-id-wrapper">
 
-<span>PARTIES WHO ORDERED <%= @food.name.upcase %> ($<%= @food.price %>) :</span>
+<span class="form-caption">PARTIES WHO ORDERED <%= @food.name.upcase %> ($<%= @food.price %>) :</span>
 <ul>
   <% @food_shows_parties.each do |party| %>
   <li class="parties-who-ordered">
