@@ -18,19 +18,26 @@
 
 <div class="partyshow-wrapper">
 
-	<div class="party-edit-cancel">
-		<h3>
-			<%= @party.name.upcase %>: <%= @party.size_of_party %> guests 
-			(<a href="/parties/<%= @party.id %>/edit">edit</a>)
-		</h3>
 
-		<form action="/parties/<%= @party.id %>" method="post">
-			<input type="hidden" name="_method" value="delete" />
-			<div class="myButton">
-			<input type="submit" value="CANCEL RESERVATION" id="cancel-reservation-button">
-			</div>
-		</form>
-	</div>
+
+<div class="party-edit-cancel">
+	<ul>
+		<li>
+			<h3><%= @party.name.upcase %>: <%= @party.size_of_party %> guests</h3>
+		</li>
+		<br>
+		<div class="editcancel">
+			( <a href="/parties/<%= @party.id %>/edit">edit</a> )
+			(<form action="/parties/<%= @party.id %>" method="post" class="cancelres-form">
+				<input type="hidden" name="_method" value="delete">
+				<input type="submit" value="cancel reservation">
+			</form>)
+		</div>
+	</ul>
+</div>
+
+
+
 
 	<div class="selectfood-addorder">
 		<form action="/parties/<%= @party.id %>/orders" method="post">

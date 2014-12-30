@@ -10,6 +10,13 @@ h2 {
   font-weight: 200;
 }
 
+h3 {
+  font-family: 'Cinzel', serif;
+  color: #FCFAF1;
+  font-size: 2em;
+}
+
+
 h6 {
 	font-size: 3em;
 	color: rgb(220, 220, 220);
@@ -117,6 +124,42 @@ form {
 .food-id-buttons ul li {
   display: inline;
 }
+
+
+
+
+
+
+.party-edit-cancel form {
+  display: inline-block;
+}
+
+.party-edit-cancel input {
+  background: none;
+  border: none;
+  color: rgb(206, 197, 180);
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  -webkit-transition: color .25s;
+  -moz-transition: color .25s;
+  -ms-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color 0.5s ease;
+}
+
+.party-edit-cancel ul li {
+  display: inline;
+}
+
+.editcancel {
+  margin-top: -43px;
+}
+
+.cancelres-form {
+  margin-left: 0;
+}
+
 
 .removedish-form {
   margin-left: 10px;
@@ -251,18 +294,6 @@ a:hover {
   margin: 12%;
 }
 
-
-
-
-
-#cancel-reservation-button {
-  width: 150px;
-  height: 25px;
-}
-
-.party-edit-cancel {
-  padding-bottom: 5%;
-}
 
 .selectfood-addorder {
   padding-bottom: 5%;
