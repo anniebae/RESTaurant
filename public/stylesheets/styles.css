@@ -271,6 +271,14 @@ a:hover {
   margin: 20%;
 }
 
+.pure-g {
+  margin-top: 8%;
+}
+
+.button-xsmall {
+  font-size: 70%;
+}
+
 .menu-button {
   background-color: white;
   width: 9%;
