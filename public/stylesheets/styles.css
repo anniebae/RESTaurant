@@ -139,7 +139,8 @@ form {
 }
 
 .menu-wrapper {
-  margin: 20%;
+  margin: 13%;
+  margin-left: 17%;
   width: 100%;
 }
 
@@ -236,33 +237,6 @@ a:hover {
   font-family: 'Cinzel', serif;
 }
 
-div.myButton4 input {
-  cursor:pointer;
-	width: 130px;
-  height: 20px;
-  border: none;
-}
-
-div.myButton3 input {
-  cursor:pointer;
-  width: 20px;
-  height: 20px;
-  border: none;
-}
-
-div.myButton2 input {
-  cursor:pointer;
-  width: 135px;
-  height: 40px;
-  border: none;
-}
-
-div.myButton input {
-  cursor:pointer;
-  width: 145px;
-  height: 45px;
-  border: none;
-}
 
 .restaurant-img {
   width: 100%;
@@ -271,6 +245,15 @@ div.myButton input {
 .root-restaurant {
   margin-bottom: 50px;
 }
+
+
+.partyshow-wrapper {
+  margin: 12%;
+}
+
+
+
+
 
 #cancel-reservation-button {
   width: 150px;

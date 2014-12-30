@@ -1,4 +1,23 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+            <form action="/sessions" method="post" class="logout-form">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+<div class="partyshow-wrapper">
+
 	<div class="party-edit-cancel">
 		<h3>
 			<%= @party.name.upcase %>: <%= @party.size_of_party %> guests 
@@ -61,5 +80,4 @@
 <a href="/parties/<%= @party.id %>/receipt">C H E C K O U T</a>
 
 
-<br>
-<br>
+</div>
