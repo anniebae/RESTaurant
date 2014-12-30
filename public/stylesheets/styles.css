@@ -294,18 +294,9 @@ a:hover {
   margin: 12%;
 }
 
-
-.selectfood-addorder {
-  margin: 8%;
-}
-
 .orders-x-dontlikethis {
   text-align: center;
   padding-bottom: 8%;
-}
-
-#orders-table {
-  margin-left: 41%;
 }
 
 .receipt-table {
