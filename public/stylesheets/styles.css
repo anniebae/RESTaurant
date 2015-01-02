@@ -311,16 +311,12 @@ a:hover {
   margin: 12%;
 }
 
-.orders-x-dontlikethis {
-  text-align: center;
-  padding-bottom: 8%;
-}
-
 .receipt-table {
-  margin-left: 33%;
-  margin-bottom: 4%;
+  margin: 0 auto;
+  margin-top: 13%;
 }
 
-#pay-button {
-  padding-bottom: 3%;
+.pay-button {
+  margin-left: 0;
+  margin: 2%;
 }

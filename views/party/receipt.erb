@@ -1,6 +1,21 @@
-	<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+            <form action="/sessions" method="post" class="logout-form">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-	<table border="5" width="35%" CELLSPACING="3" class="receipt-table">
+	<table border="5" width="40%" CELLSPACING="3" class="receipt-table">
 		<tr>
 			<th colspan="2">
 				<h2>R E S T a u r a n t</h2>
@@ -21,11 +36,7 @@
 				<% else %>
 					<td>0</td>
 				<% end %>
-				<br>
 			</tr>
-			<tr></tr>
-			<tr></tr>
-			<tr></tr>
 			<% if order.charge %>
 				<% total += order.food.price %>
 			<% end %>
@@ -33,10 +44,6 @@
 		<tr>
 			<th>TOTAL</th>
 			<th>$<%= total.round(2)%></th>
-		</tr>
-		<tr>
-			<th></th>
-			<th></th>
 		</tr>
 		<tr>
 			<th colspan="2"><i>tip suggestions: </i></th>
@@ -50,12 +57,11 @@
 		</tr>
 	</table>
 
-
-	<form action="/parties/<%= @party.id %>/paybill" method="post">
+	<form action="/parties/<%= @party.id %>/paybill" method="post" class="pay-button">
 		<input type="hidden" name="_method" value="patch">
-			<div class="myButton" id="pay-button">
-				<input type="submit" onclick="return confirm('PAYMENT PROCESSED - Come back soon!')" value="P A Y">
-			</div>
+		<button type="submit" class="pure-button" onclick="return confirm('PAYMENT PROCESSED - Come back soon!')">
+			PAY
+		</button>
 	</form>
 
 	<a href="javascript:if(window.print)window.print()">PRINT RECEIPT</a>

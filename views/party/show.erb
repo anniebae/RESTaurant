@@ -15,96 +15,81 @@
   </nav>
 </header>
 
-
 <div class="partyshow-wrapper">
+	<div class="party-edit-cancel">
+		<ul>
+			<li>
+				<h3><%= @party.name.upcase %>: <%= @party.size_of_party %> guests</h3>
+			</li>
+			<br>
+			<div class="editcancel">
+				( <a href="/parties/<%= @party.id %>/edit">edit</a> )
+				(<form action="/parties/<%= @party.id %>" method="post" class="cancelres-form">
+					<input type="hidden" name="_method" value="delete">
+					<input type="submit" value="cancel reservation">
+				</form>)
+			</div>
+		</ul>
+	</div>
 
-
-
-<div class="party-edit-cancel">
-	<ul>
-		<li>
-			<h3><%= @party.name.upcase %>: <%= @party.size_of_party %> guests</h3>
-		</li>
-		<br>
-		<div class="editcancel">
-			( <a href="/parties/<%= @party.id %>/edit">edit</a> )
-			(<form action="/parties/<%= @party.id %>" method="post" class="cancelres-form">
-				<input type="hidden" name="_method" value="delete">
-				<input type="submit" value="cancel reservation">
-			</form>)
+	<div class="pure-g">
+		<div class="selectfood-addorder pure-u-1-4">
 		</div>
-	</ul>
-</div>
 
+		<div class="selectfood-addorder pure-u-1-4">
+			<form action="/parties/<%= @party.id %>/orders" method="post" class="selectfood-addorder-form">
+				<ul>
+				SELECT A FOOD ITEM:
+					<% @foods.each do |food| %>
+						<ul>
+							<li>
+								<input type="radio" name="food_name" value="<%= food.name %>"> <%= food.name %>
+							</li>
+						</ul>
+				 	<% end %>
+				</ul>
+				<button type="submit" class="button-xsmall pure-button">
+					ADD TO ORDER
+				</button>
+			</form>
+		</div>
 
+		<div class="orders-x-dontlikethis pure-u-1-4">
+			<table id="orders-table">
+				<tr>
+					<th colspan="3">
+						ORDERS:
+					</th>
+				</tr>
+				<% @party.orders.each do |order| %>
+				<tr>
+					<td width="50%">
+						<%= order.food.name %>
+					</td>
+					<td width="20%">
+						<form action="/parties/<%=@party.id%>/orders" method="post">
+							<input type="hidden" name="order_id" value="<%= order.id %>">
+							<input type="hidden" name="_method" value="delete">
+							<button type="submit" class="button-xsmall pure-button">
+								X
+							</button>
+						</form>
+					</td>
+					<td width="30%">
+						<form action="/orders/<%= order.id %>/dontlikethis" method="post">
+							<input type="hidden" name="_method" value="patch">
+							<button type="submit" class="button-xsmall pure-button"onclick="return confirm('OK - no charge')">
+								don't like this
+							</button>
+						</form>
+					</td>
+					<% end %>	
+				</tr>
+			</table>
+		</div>
 
-
-<div class="pure-g">
-	<div class="selectfood-addorder pure-u-1-4">
+		<div class="selectfood-addorder pure-u-1-4">
+		</div>
 	</div>
-
-	<div class="selectfood-addorder pure-u-1-4">
-		<form action="/parties/<%= @party.id %>/orders" method="post" class="selectfood-addorder-form">
-			<ul>
-			SELECT A FOOD ITEM:
-				<% @foods.each do |food| %>
-					<ul>
-						<li>
-							<input type="radio" name="food_name" value="<%= food.name %>"> <%= food.name %>
-						</li>
-					</ul>
-			 	<% end %>
-			</ul>
-			<button type="submit" class="button-xsmall pure-button">
-				ADD TO ORDER
-			</button>
-		</form>
-	</div>
-
-	<div class="orders-x-dontlikethis pure-u-1-4">
-		<table id="orders-table">
-			<tr>
-				<th colspan="3">
-					ORDERS:
-				</th>
-			</tr>
-			<% @party.orders.each do |order| %>
-			<tr>
-				<td width="50%">
-					<%= order.food.name %>
-				</td>
-				<td width="20%">
-					<form action="/parties/<%=@party.id%>/orders" method="post">
-						<input type="hidden" name="order_id" value="<%= order.id %>">
-						<input type="hidden" name="_method" value="delete">
-						<button type="submit" class="button-xsmall pure-button">
-							X
-						</button>
-					</form>
-				</td>
-				<td width="30%">
-					<form action="/orders/<%= order.id %>/dontlikethis" method="post">
-						<input type="hidden" name="_method" value="patch">
-						<button type="submit" class="button-xsmall pure-button"onclick="return confirm('OK - no charge')">
-							don't like this
-						</button>
-					</form>
-				</td>
-				<% end %>	
-			</tr>
-		</table>
-	</div>
-
-	<div class="selectfood-addorder pure-u-1-4">
-	</div>
-
-
-
-
-</div>
-
-
-<a href="/parties/<%= @party.id %>/receipt" class="checkout-link">- C H E C K O U T -</a>
-
-
+	<a href="/parties/<%= @party.id %>/receipt" class="checkout-link">- C H E C K O U T -</a>
 </div>
