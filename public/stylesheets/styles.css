@@ -271,8 +271,17 @@ a:hover {
   margin: 20%;
 }
 
+.selectfood-addorder-form {
+ font-family: 'Cinzel', serif; 
+}
+
+.checkout-link {
+  font-size: 20px;
+}
+
 .pure-g {
   margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 .button-xsmall {
