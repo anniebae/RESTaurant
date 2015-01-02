@@ -18,7 +18,7 @@
 
 <div class="partyid-edit">
 	<h2><%= @party.name %></h2>
-	<form action="/parties/<%= @party.id %>" method="post"  class="pure-form pure-form-aligned">
+	<form action="/parties/<%= @party.id %>" method="post" class="pure-form pure-form-aligned">
 		<input type="hidden" name="_method" value="patch">
 			<div class="pure-control-group">
 				<label>Name: </label>

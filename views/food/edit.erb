@@ -16,7 +16,7 @@
 </header>
 
 <% if false %>
-	<form action="/foods/<%= @food.id %>" method="post">
+	<form action="/foods/<%= @food.id %>" method="post" class="foodedit-form">
 		<fieldset>
 			<div class="pure-control-group">
 				<label>Food: </label>
@@ -42,8 +42,15 @@
 <div class="edit-food">
 	<span class="form-caption">FIX THIS DISH</span>
 		<%= form_open(@food, method: 'patch') %>
-			<%= input_tag(type: 'text', resource: 'food', name: 'name', value: @food.name) %>
-			<%= input_tag(type: 'text', resource: 'food', name: 'price', value: @food.price) %>
+      <div>
+        <label>Name: </label>
+  			<%= input_tag(type: 'text', resource: 'food', name: 'name', value: @food.name) %>
+      </div>
+
+      <div>
+        <label>Price: </label>
+  			<%= input_tag(type: 'text', resource: 'food', name: 'price', value: @food.price) %>
+      </div>
 			<%= input_tag(type: 'submit', value: "Submit") %>
 
 		<%= form_close %>
