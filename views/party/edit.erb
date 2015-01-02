@@ -1,21 +1,37 @@
-<link rel="stylesheet" href="stylesheets/styles.css">
+<header>
+  <a href="/" class="logo">RESTaurant</a>
+  <nav>
+    <div id="navcontainer">
+      <ul>
+        <li>
+          <a href="/foods">MENU</a>
+        </li>
+            <form action="/sessions" method="post" class="logout-form">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="LOG OUT">
+            </form>
+      </ul>
+    </div>
+  </nav>
+</header>
 
-<h2><%= @party.name %></h2>
 
-<center>
-	<form action="/parties/<%= @party.id %>" method="post">
-		<input type="hidden" name="_method" value="patch" >
-			<p>
-				NAME:
-				<input name="party[name]" value="<%= @party.name %>">
-			</p>
-			<p>
-				# OF GUESTS:
-				<input name="party[size_of_party]" value="<%= @party.size_of_party %>">
-			</p>
-		<div class="myButton">
-			<input type="submit" value="EDIT RESERVATION">
-		</div>
-		
+<div class="partyid-edit">
+	<h2><%= @party.name %></h2>
+	<form action="/parties/<%= @party.id %>" method="post"  class="pure-form pure-form-aligned">
+		<input type="hidden" name="_method" value="patch">
+			<div class="pure-control-group">
+				<label>Name: </label>
+				<input type="text" name="party[name]" value="<%= @party.name %>">	
+			</div>
+			<div class="pure-control-group">
+				<label># of Guests: </label>
+				<input type="text" name="party[size_of_party]" value="<%= @party.size_of_party %>">
+			</div>
+			<div class="pure-controls">
+				<button type="submit" class="pure-button">
+					Edit Reservation
+				</button>
+			</div>
 	</form>
-</center>
+</div>
