@@ -17,23 +17,21 @@
 
 <% if false %>
 	<form action="/foods/<%= @food.id %>" method="post" class="foodedit-form">
-		<fieldset>
-			<div class="pure-control-group">
-				<label>Food: </label>
-				<input type="text" name="food[name]" value="<%= @food.name %>">
-			</div>
+  	<div class="pure-control-group">
+  		<label>Food: </label>
+  		<input type="text" name="food[name]" value="<%= @food.name %>">
+  	</div>
 
-			<div class="pure-control-group">
-				<label>Price: </label>
-				<input type="text" name="food[price]" value="<%= @food.price %>">
-			</div>
+  	<div class="pure-control-group">
+  		<label>Price: </label>
+  		<input type="text" name="food[price]" value="<%= @food.price %>">
+  	</div>
 
-			<div class="pure-controls">
-				<button type="submit" class="pure-button">
-					FIX THIS DISH
-				</button>
-			</div>
-		</fieldset>
+  	<div class="pure-controls">
+  		<button type="submit" class="pure-button">
+  			FIX THIS DISH
+  		</button>
+  	</div>
 	</form>>
 <% end %>
 
