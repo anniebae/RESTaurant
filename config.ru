@@ -1,14 +1,21 @@
 require 'bundler'
 Bundler.require(:default)
 
-run lambda { |env| [200, {'Content-Type'=>'text/plain'}, StringIO.new("Hello World!\n")] }
+require './helpers/authentication_helper'
+require './helpers/form_helper'
+require './helpers/link_helper'
 
+require './controllers/application_controller'
+require './controllers/foods_controller'
+require './controllers/orders_controller'
+require './controllers/parties_controller'
+require './controllers/sessions_controller'
+require './controllers/users_controller'
 
-
-Dir.glob('./{models,helpers,controllers}/*.rb').each do |file|
-  require file
-  puts "required #{file}"
-end
+require './models/food'
+require './models/order'
+require './models/party'
+require './models/user'
 
 map('/'){ run ApplicationController }
 map('/sessions'){ run SessionsController }
